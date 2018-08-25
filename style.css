@@ -1,0 +1,235 @@
+/* Side Bar */
+
+#main {
+   -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
+   -o-transition: all 0.5s;
+   transition: all 0.5s;
+}
+
+.topzone {
+   min-height: 150px;
+   background: grey;
+   -webkit-transition: all 1s;
+   -moz-transition: all 1s;
+   -o-transition: all 1s;
+   transition: all 1s;
+}
+
+.botzone {
+   min-height: 150px;
+   background: grey;
+   -webkit-transition: all 1s;
+   -moz-transition: all 1s;
+   -o-transition: all 1s;
+   transition: all 1s;
+}
+
+.sidenav {
+   height: 100%;
+   width: 0;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   overflow-x: hidden;
+   background-color: #111;
+   -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
+   -o-transition: all 0.5s;
+   transition: all 0.5s;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+
+.trashbar {
+   height: 100%;
+   width: 0;
+   position: fixed;
+   z-index: 999;
+   top: 0;
+   left: 0;
+   opacity: 0.9;
+   overflow-x: hidden;
+   background-color: #111;
+   -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
+   -o-transition: all 0.5s;
+   transition: all 0.5s;
+}
+
+
+
+.outer {
+   position: relative;
+}
+
+.blockList {
+   background: grey;
+   padding: 0 20px;
+   overflow-y: visible;
+   height: 100px;
+}
+
+
+.sidenav .thumbnail {
+   padding: 15px;
+}
+
+.opacity {
+}
+
+@media screen and (max-height: 450px) {
+   .sidenav {
+      padding-top: 15px;
+   }
+   .sidenav a {
+      font-size: 18px;
+   }
+}
+
+.ui-draggable-dragging {
+  opacity: 0.8;
+  
+}
+
+.ui-selected {
+ background: #F39814; color: white; padding: 10px;
+}
+.ui-selecting { background: #FECA40; padding: 10px; }
+
+.ui-sortable-helper {
+  opacity: 0.8;
+}
+
+.selectable .ui-selecting {
+  border: 2px dashed #ff0000;
+}
+
+.selectable .ui-selected {
+  border: 2px solid #ff0000;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(255, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(255, 0, 0, 1);
+  box-shadow: 0px 0px 8px 0px rgba(255, 0, 0, 1);
+}
+
+.selectable img {
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid #ffffff;
+}
+
+.selected-items {
+  border: 2px solid #ff0000;
+  line-height: 32px;
+}
+
+
+/* End of Sidebar */
+
+.browser {
+   max-width: 800px;
+   min-height: 25px;
+   position: relative;
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+   background: #ffffff url(https://designmodo.com/startup/app/css/img/dots.png) no-repeat 11px 11px;
+   background-size: 33px auto;
+   padding-top: 30px;
+   margin: 0 auto;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+#toggle {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   top: 20px;
+   left: 20px;
+   width: 40px;
+   height: 40px;
+   line-height: 1;
+   font-size: 18px;
+   color: #1c1d1f;
+   text-align: center;
+   border: 1px solid #e9e8e9;
+   border-radius: 6px;
+   box-sizing: border-box;
+   background: transparent;
+   -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
+   -o-transition: all 0.5s;
+   transition: all 0.5s;
+   cursor: pointer;
+   z-index: 20;
+}
+
+#trashIcon {
+   font-size: 60px;
+   color: white;
+   position: absolute;
+   left: 35%;
+   top: 45%
+}
+
+.dropArea {
+   max-width: 800px;
+   min-height: 600px;
+   position: relative;
+   border-bottom-right-radius: 10px;
+   border-bottom-left-radius: 10px;
+   background: #ffffff;
+   background-size: 33px auto;
+   padding: 0px;
+   margin: 0 auto;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+   transition: 0.25s ease-in-out;
+   -moz-transition: 0.25s ease-in-out;
+   -webkit-transition: 0.25s ease-in-out;
+
+}
+
+.addPaddingBottom {
+   padding-bottom: 150px !important;
+   transition: 0.25s ease-in-out;
+   -moz-transition: 0.25s ease-in-out;
+   -webkit-transition: 0.25s ease-in-out;
+}
+
+.over {
+   background: #e9ecef;
+   padding-bottom: 150px;
+   transition: 0.25s ease-in-out;
+   -moz-transition: 0.25s ease-in-out;
+   -webkit-transition: 0.25s ease-in-out;
+}
+
+#project {
+   width: 100%;
+   font-size: 42px;
+   text-align: center;
+   background: none;
+   border: none;
+   font-weight: 300;
+   font-family: "Nunito", Helvetica, Arial, serif;
+   outline: none;
+   padding: 2px;
+   margin: 18px 0 8px;
+   color: #141414;
+   -webkit-transition: 0.25s;
+   -moz-transition: 0.25s;
+   -o-transition: 0.25s;
+   transition: 0.25s;
+}
+
+input[placeholder]#project {
+   color: #141414;
+}
+
+#project:hover,
+#project:focus {
+   opacity: 0.5;
+}

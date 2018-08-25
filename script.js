@@ -7,7 +7,7 @@ $(function () {
       start: function (event, ui) {
          console.log('did it start?');
          if (ui.helper.hasClass('test') && isOpen === true) {
-            $('#myTrashbar').css('width', '250px');
+            $('#myTrashbar').css('width', '233px');
          }
 
       },

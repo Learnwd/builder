@@ -103,7 +103,7 @@ function viewPageIDs() {
 
 function loadSnippet() {
 
-   $.get('import.html', function (data) {
+   $.get('snippets.html', function (data) {
       for (var i = 0; i < pageIDs.length; i++) {
          var posts = $(data).filter('#' + pageIDs[i]);
          $('body').append(posts);

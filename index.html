@@ -5,12 +5,14 @@
    <!-- Required meta tags -->
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+   
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    <!-- Custom Style Sheet -->
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="import" href="import.html">
+   <link type="text/css" rel="stylesheet" href="css/db.css">
 </head>
 
 <body>
@@ -19,19 +21,30 @@
       <div id="myTrashbar" class="trashbar">
          <i id="trashIcon" class="fa fa-times"></i>
       </div>
-      <img id="Block1" src="blocks/1.jpg" class="img-fluid thumbnail draggable" alt="">
-      <img id="Block2" src="blocks/2.png" class="img-fluid thumbnail draggable" alt="">
-      <img id="Block3" src="blocks/3.png" class="img-fluid thumbnail draggable" alt="">
-      <img id="Block4" src="blocks/4.png" class="img-fluid thumbnail draggable" alt="">
-      <img id="Block5" src="blocks/5.jpg" class="img-fluid thumbnail draggable" alt="">
-      <img id="Block6" src="blocks/6.png" class="img-fluid thumbnail draggable" alt="">
-      <img id="Block7" src="blocks/7.png" class="img-fluid thumbnail draggable" alt="">
-      <img id="Block8" src="blocks/8.png" class="img-fluid thumbnail draggable" alt="">
-      <img id="Block9" src="blocks/9.png" class="img-fluid thumbnail draggable" alt="">
+      <select id="filter" onchange="filter()">
+        <option value="all">All</option>
+        <option value="headers">Headers</option>
+        <option value="contents">Contents</option>
+         <option value="features">Features</option>
+        <option value="cta">Call to Action</option>
+         <option value="galleries">Galleries</option>
+         <option value="contacts">Contact</option>
+      </select>
+      <div id="blocklist">
+      <img src="blocks/1.jpg" class="img-fluid thumbnail draggable" alt="" data-blockid="block1" data-category="headers">
+      <img src="blocks/2.png" class="img-fluid thumbnail draggable" alt="" data-blockid="block2" data-category="contents">
+      <img src="blocks/3.png" class="img-fluid thumbnail draggable" alt="" data-blockid="block3" data-category="features">
+      <img src="blocks/4.png" class="img-fluid thumbnail draggable" alt="" data-blockid="block4" data-category="features">
+      <img src="blocks/5.jpg" class="img-fluid thumbnail draggable" alt="" data-blockid="block5" data-category="features">
+      <img src="blocks/6.png" class="img-fluid thumbnail draggable" alt="" data-blockid="block6" data-category="features">
+      <img src="blocks/7.png" class="img-fluid thumbnail draggable" alt="" data-blockid="block7" data-category="cta">
+      <img src="blocks/8.png" class="img-fluid thumbnail draggable" alt="" data-blockid="block8" data-category="galleries">
+      <img src="blocks/9.png" class="img-fluid thumbnail draggable" alt="" data-blockid="block9" data-category="contacts">
+      </div>   
    </div>
    <!-- end of sidebar -->
-   
-    
+
+
 
    <div id="toggle" onclick="toggleNav()">
       <i id="toggleIcon" class="fa fa-angle-double-right"></i>
@@ -52,14 +65,18 @@
       <div class="container dropArea mb-5" id="dropArea">
       </div>
       
-
-
-
+      <div class="container export text-center">
+         <div class="row">
+            <div class="col-12">
+               <p class="">
+                     <a class="btn btn-black mr-4" onclick="preview()">Preview Website</a>
+                     <a id="download" class="btn btn-black">Export HTML/CSS</a>
+                  </p>
+            </div>
+         </div>
+      </div>
    </div>
-   <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
    <script src="script.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

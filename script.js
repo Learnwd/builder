@@ -2,6 +2,8 @@ var isOpen = false;
 var newItem;
 var isEmpty;
 
+var pageIDs = [];
+
 $(function () {
    $("#dropArea").sortable({
       start: function (event, ui) {
@@ -76,10 +78,9 @@ $(function () {
    $().disableSelection();
 });
 
-
 function isPageEmpty() {
-   
-   if($('#dropArea').children().length > 1){
+
+   if ($('#dropArea').children().length > 1) {
       console.log('Items on the page');
       $('#dropArea').css('min-height', '0px');
       isEmpty = false;
@@ -88,7 +89,36 @@ function isPageEmpty() {
       $('#dropArea').css('min-height', '600px');
       isEmpty = true;
    }
-   
+
+}
+
+function viewPageIDs() {
+
+   for (var i = 0; i < $('#dropArea').children().length; i++) {
+      pageIDs.push($('#dropArea').children()[i].getAttribute('data-blockid'));
+   }
+
+   console.log(pageIDs);
+}
+
+function loadSnippet() {
+
+   $.get('import.html', function (data) {
+      for (var i = 0; i < pageIDs.length; i++) {
+         var posts = $(data).filter('#' + pageIDs[i]);
+         $('body').append(posts);
+      }
+   });
+}
+
+function clearPage() {
+   $('body').html('');
+}
+
+function preview() {
+   viewPageIDs();
+   clearPage();
+   loadSnippet();
 }
 
 //sidebar stuff
@@ -109,4 +139,16 @@ function toggleNav() {
       isOpen = false;
    }
 
+}
+
+function filter(){
+   var filter = $('#filter').val();
+   $('#blocklist').find('[data-category]').hide();
+   $('#blocklist').find('[data-category="'+filter+'"]').toggle();
+   
+   if(filter == 'all'){
+      $('#blocklist').find('[data-category]').show();
+   }
+ 
+  
 }

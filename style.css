@@ -141,6 +141,20 @@
 
 }
 
+#filter {
+   width: 200px;
+   margin-left: 16.5px;
+   -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
+   -o-transition: all 0.5s;
+   transition: all 0.5s;
+}
+
+.export {
+   max-width: 800px;
+   color: white;
+}
+
 #toggle {
    display: flex;
    flex-direction: column;
@@ -165,6 +179,10 @@
    transition: all 0.5s;
    cursor: pointer;
    z-index: 20;
+}
+
+#toggleIcon {
+   color: #1c1d1f;  
 }
 
 #trashIcon {
